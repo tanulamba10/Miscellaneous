@@ -1,0 +1,32 @@
+body {
+    background-color: wheat;
+}
+
+h1 {
+    color: maroon;
+}
+
+.user {
+    font-style: italic;
+}
+
+#post {
+    background-color: aqua;
+}
+
+.btn {
+    background-color: maroon;
+}
+
+.view {
+    background-color: rgb(126, 20, 20);
+}
+
+.create {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: wheat;
+}
