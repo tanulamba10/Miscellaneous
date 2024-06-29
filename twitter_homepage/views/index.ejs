@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Home</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <h1>X</h1>
+    <hr>
+    <h2>Tweets :</h2>
+    <% for(tweet of tweets){ %>
+        <div class="tweets">
+            <p class="id">Id: <%=tweet.id%>
+            </p>
+            <h3 class="user">
+                @<%=tweet.username%>
+            </h3>
+            <h2 class="mytweet">
+                <%=tweet.myTweet%>
+            </h2>
+            <button><a href="http://localhost:8080/tweets/<%= tweet.id%>">Retweet</a></button>
+            <button><a href="http://localhost:8080/tweets/<%= tweet.id%>/edit">Edit Tweet</a></button>
+            <form method="post" action="/tweets/<%= tweet.id%>?_method=DELETE">
+                <button>
+                    DELETE
+                </button>
+            </form>
+            <hr>
+        </div>
+        <% } %>
+            <button class="add"><a href="http://localhost:8080/tweets/new">Add your tweet</a></button>
+</body>
+
+</html>

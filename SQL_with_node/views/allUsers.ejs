@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style>
+        .add-user {
+            margin: 20px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid black;
+            position: sticky;
+            top: 10%;
+
+        }
+
+        table,
+        tr,
+        td {
+            border: 2px solid black;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Random Users Data : </h1>
+        <form method="get" action="/users/new">
+            <button class="add-user">Add User</button>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>Edit User</th>
+            <th>Delete User</th>
+        </tr>
+        <% for(user of result){ %>
+            <tr>
+                <td>
+                    <%= user.id %>
+                </td>
+                <td>
+                    <%= user.username %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <form method="get" action="/users/<%= user.id %>/edit">
+                        <button>
+                            Edit User
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="/users/<%= user.id %>/delete">
+                        <button>
+                            DELETE User
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+</body>
+
+</html>
